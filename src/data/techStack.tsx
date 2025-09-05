@@ -6,30 +6,35 @@ import {
   SiMysql,
   SiNextdotjs,
   SiNodedotjs,
+  SiReact,
   SiShadcnui,
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import { BsTerminalFill } from "react-icons/bs";
+import { BsDatabase, BsTerminalFill } from "react-icons/bs";
+import { FaReact } from "react-icons/fa";
 
-const techStack = {
-  fronted: [
+const _stack = {
+  Fronted: [
     { Icon: SiNextdotjs, skill: "Next" },
+    { Icon: FaReact, skill: "React" },
     { Icon: SiJavascript, skill: "JavaScript" },
     { Icon: SiTypescript, skill: "TypeScript" },
     { Icon: SiTailwindcss, skill: "Tailwind" },
     { Icon: SiAstro, skill: "Astro" },
     { Icon: SiShadcnui, skill: "Shadcn" },
   ],
-  backend: [
+  Backend: [
     { Icon: SiExpress, skill: "Express" },
     { Icon: SiNodedotjs, skill: "Node" },
+    { Icon: BsDatabase, skill: "Convex" },
   ],
-  databases: [{ Icon: SiMysql, skill: "MySQL" }],
-  tools: [
+  Databases: [{ Icon: SiMysql, skill: "MySQL" }],
+  Tools: [
     { Icon: SiGit, skill: "Git" },
     { Icon: BsTerminalFill, skill: "Terminal" },
   ],
 };
 
-export default techStack;
+const TECH_STACK = Object.entries(_stack);
+export default TECH_STACK;

@@ -10,7 +10,7 @@ export default function SkillBox({ skill, Icon }: SkillBoxProps) {
   return (
     <GlareHover
       height="50px"
-      width="100px"
+      width="140px"
       glareColor="#ffffff"
       className=""
       glareOpacity={0.3}

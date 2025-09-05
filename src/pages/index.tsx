@@ -5,7 +5,12 @@ import Button from "~/components/ui/Button";
 import SpotlightCard from "~/components/ui/SpotLightCard";
 import Title from "~/components/ui/Title";
 import Text from "~/components/ui/Text";
+import Link from "~/components/ui/Link";
+import SkillBox from "~/components/ui/SkillBox";
+import TECH_STACK from "~/data/techStack";
+
 export default function Home() {
+  console.log(TECH_STACK);
   return (
     <>
       <Head>
@@ -46,17 +51,22 @@ export default function Home() {
         {/* My tech stack */}
         <section className="min-h-screen">
           <Title className="text-3xl font-bold">My tech stack</Title>
-          <Text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-            adipisci tenetur facere tempore hic doloremque quidem recusandae id
-            in fugit voluptatum, eveniet ea esse quasi, voluptatem, voluptate
-            sed laudantium quisquam.
-          </Text>
+          {TECH_STACK.map(([category, items]) => (
+            <div>
+              <Title className="text-xl">{category}</Title>
+              <div className="flex gap-6 flex-wrap">
+                {items.map(({ Icon, skill }) => (
+                  <SkillBox Icon={Icon} skill={skill} />
+                ))}
+              </div>
+            </div>
+          ))}
         </section>
 
         {/* My projects */}
         <section className="min-h-screen">
           <Title className="text-3xl font-bold">My projects</Title>
+          {/* Whatsapp Clone */}
           <SpotlightCard className="" spotlightColor="rgba(255, 255, 255, 0.2)">
             <img
               src="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58"
@@ -68,7 +78,35 @@ export default function Home() {
               <Title>Whatsapp clone</Title>
             </a>
             <Text>a whatsapp clone made by me</Text>
-            <a href="/">See source code</a>
+            <Link href="/">See source code</Link>
+          </SpotlightCard>
+          {/* Whatsapp Clone */}
+          <SpotlightCard className="" spotlightColor="rgba(255, 255, 255, 0.2)">
+            <img
+              src="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58"
+              width={500}
+              height={500}
+              alt="Picture of the author"
+            />
+            <a href="/">
+              <Title>Whatsapp clone</Title>
+            </a>
+            <Text>a whatsapp clone made by me</Text>
+            <Link href="/">See source code</Link>
+          </SpotlightCard>
+          {/* Whatsapp Clone */}
+          <SpotlightCard className="" spotlightColor="rgba(255, 255, 255, 0.2)">
+            <img
+              src="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58"
+              width={500}
+              height={500}
+              alt="Picture of the author"
+            />
+            <a href="/">
+              <Title>Whatsapp clone</Title>
+            </a>
+            <Text>a whatsapp clone made by me</Text>
+            <Link href="/">See source code</Link>
           </SpotlightCard>
         </section>
       </main>
