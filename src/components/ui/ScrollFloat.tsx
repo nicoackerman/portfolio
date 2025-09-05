@@ -10,7 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface ScrollFloatProps {
+export interface ScrollFloatProps {
   children: ReactNode;
   scrollContainerRef?: RefObject<HTMLElement>;
   containerClassName?: string;

@@ -3,7 +3,7 @@ import React from "react";
 interface ShinyTextProps {
   text: string;
   disabled?: boolean;
-  speed?: number; // duración de la animación en segundos
+  speed?: number; 
   className?: string;
 }
 
