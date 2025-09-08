@@ -1,8 +1,6 @@
 import Head from "next/head";
 import CustomShinyText from "~/components/custom/CustomShinyText";
-import CustomSplashCursor from "~/components/custom/CustomSplashCursor";
 import Button from "~/components/ui/Button";
-import SpotlightCard from "~/components/ui/SpotLightCard";
 import Title from "~/components/ui/Title";
 import Text from "~/components/ui/Text";
 import Link from "~/components/ui/Link";
@@ -22,7 +20,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex min-h-screen flex-col gap-y-5 bg-black px-10 text-white">
+      <main className="flex min-h-screen flex-col gap-y-5 bg-black lg:px-40 px-10 text-white">
         {/* Hero section */}
         <section className="flex min-h-screen flex-col items-center justify-center">
           {/* profile info */}
