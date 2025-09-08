@@ -12,7 +12,7 @@ export default function SkillBox({ skill, Icon }: SkillBoxProps) {
       height="50px"
       width="140px"
       glareColor="#ffffff"
-      className=""
+      className="items-center justify-center"
       glareOpacity={0.3}
       glareAngle={-30}
       glareSize={300}
