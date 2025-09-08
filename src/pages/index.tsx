@@ -8,6 +8,9 @@ import Text from "~/components/ui/Text";
 import Link from "~/components/ui/Link";
 import SkillBox from "~/components/ui/SkillBox";
 import TECH_STACK from "~/data/techStack";
+import ABOUT_ME from "~/data/aboutMe";
+import MY_PROJECTS from "~/data/myProjects";
+import CustomGlareOver from "~/components/custom/CustomGlareOver";
 
 export default function Home() {
   console.log(TECH_STACK);
@@ -33,30 +36,40 @@ export default function Home() {
           {/* Actions */}
           <article className="flex gap-3">
             <Button>Contact Me</Button>
-            <CustomSplashCursor />
+            {/* <CustomSplashCursor /> */}
           </article>
         </section>
 
         {/* About me section */}
-        <section className="min-h-screen">
-          <Title className="text-3xl font-bold">About me</Title>
-          <Text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-            adipisci tenetur facere tempore hic doloremque quidem recusandae id
-            in fugit voluptatum, eveniet ea esse quasi, voluptatem, voluptate
-            sed laudantium quisquam.
-          </Text>
+        <section className="flex min-h-screen flex-col gap-4">
+          <div>
+            <Title className="text-3xl font-bold">About me</Title>
+            <Text>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+              adipisci tenetur facere tempore hic doloremque quidem recusandae
+              id in fugit voluptatum, eveniet ea esse quasi, voluptatem,
+              voluptate sed laudantium quisquam.
+            </Text>
+          </div>
+          <div className="flex gap-4">
+            {ABOUT_ME.map(([category, items]) => (
+              <div key={category} className="flex flex-col">
+                <span className="text-5xl font-bold">{items.amount}</span>
+                <span className="text-lg text-gray-300">{items.label}</span>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* My tech stack */}
         <section className="min-h-screen">
           <Title className="text-3xl font-bold">My tech stack</Title>
           {TECH_STACK.map(([category, items]) => (
-            <div>
+            <div key={category}>
               <Title className="text-xl">{category}</Title>
-              <div className="flex gap-6 flex-wrap">
+              <div className="flex flex-wrap gap-6">
                 {items.map(({ Icon, skill }) => (
-                  <SkillBox Icon={Icon} skill={skill} />
+                  <SkillBox key={skill} Icon={Icon} skill={skill} />
                 ))}
               </div>
             </div>
@@ -64,50 +77,39 @@ export default function Home() {
         </section>
 
         {/* My projects */}
-        <section className="min-h-screen">
+        <section className="flex min-h-screen flex-col gap-4">
           <Title className="text-3xl font-bold">My projects</Title>
-          {/* Whatsapp Clone */}
-          <SpotlightCard className="" spotlightColor="rgba(255, 255, 255, 0.2)">
-            <img
-              src="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58"
-              width={500}
-              height={500}
-              alt="Picture of the author"
-            />
-            <a href="/">
-              <Title>Whatsapp clone</Title>
-            </a>
-            <Text>a whatsapp clone made by me</Text>
-            <Link href="/">See source code</Link>
-          </SpotlightCard>
-          {/* Whatsapp Clone */}
-          <SpotlightCard className="" spotlightColor="rgba(255, 255, 255, 0.2)">
-            <img
-              src="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58"
-              width={500}
-              height={500}
-              alt="Picture of the author"
-            />
-            <a href="/">
-              <Title>Whatsapp clone</Title>
-            </a>
-            <Text>a whatsapp clone made by me</Text>
-            <Link href="/">See source code</Link>
-          </SpotlightCard>
-          {/* Whatsapp Clone */}
-          <SpotlightCard className="" spotlightColor="rgba(255, 255, 255, 0.2)">
-            <img
-              src="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58"
-              width={500}
-              height={500}
-              alt="Picture of the author"
-            />
-            <a href="/">
-              <Title>Whatsapp clone</Title>
-            </a>
-            <Text>a whatsapp clone made by me</Text>
-            <Link href="/">See source code</Link>
-          </SpotlightCard>
+          <div className="flex flex-col gap-8 lg:flex-row lg:justify-between">
+            {MY_PROJECTS.map(
+              ({ description, name, repoLink, pageLink, stack, img }) => (
+                <CustomGlareOver
+                  key={name}
+                  className="flex w-10 flex-col gap-5 p-6"
+                >
+                  <div>
+                    <img
+                      src={img}
+                      className="h-60 w-full rounded"
+                      alt="Picture of the project"
+                    />
+                    <a href="/">
+                      <Title>{name}</Title>
+                    </a>
+                    <Text>{description}</Text>
+                  </div>
+                  <div className="flex justify-between">
+                    <Link href={repoLink}>See source code</Link>
+                    <Link href={pageLink}>See</Link>
+                  </div>
+                  <div className="flex gap-3">
+                    {stack.map((Tech) => (
+                      <Tech className="size-7" />
+                    ))}
+                  </div>
+                </CustomGlareOver>
+              ),
+            )}
+          </div>
         </section>
       </main>
     </>
