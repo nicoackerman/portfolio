@@ -21,7 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex min-h-screen flex-col gap-y-5 bg-black px-10 text-white md:px-20 lg:px-40">
+      <main className="flex min-h-screen flex-col gap-y-5 bg-black px-10 text-white md:px-20 lg:px-40 xl:px-60">
         {/* Hero section */}
         <section className="flex min-h-screen flex-col items-center justify-center">
           {/* profile info */}
@@ -87,25 +87,20 @@ export default function Home() {
         </section>
 
         {/* My projects */}
-        <section className="flex min-h-screen flex-col gap-4">
+        <section className="mb-30 flex min-h-screen flex-col gap-4">
           <Title className="my-2 text-3xl font-bold">My projects</Title>
-          <div className="flex flex-col gap-8 lg:flex-row lg:justify-between flex-wrap">
+          <div className="flex flex-col flex-wrap gap-8 md:gap-x-1 md:gap-y-3 lg:flex-row">
             {MY_PROJECTS.map(
               ({ description, name, repoLink, pageLink, stack, img }) => (
-                <CustomGlareOver
-                  key={name}
-                  className="flex flex-col gap-5 p-6"
-                >
+                <CustomGlareOver key={name} className="flex flex-col gap-5 p-6">
                   <div>
                     <img
                       src={img}
                       className="h-60 w-full rounded"
                       alt="Picture of the project"
                     />
-                    <a href="/">
-                      <Title>{name}</Title>
-                    </a>
-                    <Text>{description}</Text>
+                    <Title className="my-3 text-lg font-bold">{name}</Title>
+                    <Text className="h-17">{description}</Text>
                   </div>
                   <div className="flex justify-between">
                     <Link href={repoLink}>See source code</Link>

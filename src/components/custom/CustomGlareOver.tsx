@@ -12,7 +12,7 @@ export default function CustomGlareOver({
 }: CustomGlareOverProps) {
   return (
     <GlareHover
-      width="330px"
+      width="350px"
       height="500px"
       glareColor="#ffffff"
       className={className}
