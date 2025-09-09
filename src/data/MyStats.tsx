@@ -1,4 +1,4 @@
-const _me = {
+const _stats = {
   Experience: {
     amount: "+1",
     label: "YEARS OF EXPERIENCE",
@@ -9,5 +9,5 @@ const _me = {
   },
 };
 
-const ABOUT_ME = Object.entries(_me);
-export default ABOUT_ME;
+const MY_STATS = Object.entries(_stats);
+export default MY_STATS;

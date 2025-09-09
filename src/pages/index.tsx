@@ -6,7 +6,7 @@ import Text from "~/components/ui/Text";
 import Link from "~/components/ui/Link";
 import SkillBox from "~/components/ui/SkillBox";
 import TECH_STACK from "~/data/techStack";
-import ABOUT_ME from "~/data/aboutMe";
+import MY_STATS from "~/data/MyStats";
 import MY_PROJECTS from "~/data/myProjects";
 import CustomGlareOver from "~/components/custom/CustomGlareOver";
 
@@ -20,7 +20,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex min-h-screen flex-col gap-y-5 bg-black lg:px-40 px-10 text-white">
+      <main className="flex min-h-screen flex-col gap-y-5 bg-black px-10 text-white md:px-20 lg:px-40">
         {/* Hero section */}
         <section className="flex min-h-screen flex-col items-center justify-center">
           {/* profile info */}
@@ -49,11 +49,13 @@ export default function Home() {
               voluptate sed laudantium quisquam.
             </Text>
           </div>
-          <div className="flex gap-4">
-            {ABOUT_ME.map(([category, items]) => (
+          <div className="flex gap-14">
+            {MY_STATS.map(([category, items]) => (
               <div key={category} className="flex flex-col">
                 <span className="text-5xl font-bold">{items.amount}</span>
-                <span className="text-lg text-gray-300">{items.label}</span>
+                <span className="text-md w-30 text-gray-300">
+                  {items.label}
+                </span>
               </div>
             ))}
           </div>
@@ -64,8 +66,8 @@ export default function Home() {
           <Title className="text-3xl font-bold">My tech stack</Title>
           {TECH_STACK.map(([category, items]) => (
             <div key={category}>
-              <Title className="text-xl">{category}</Title>
-              <div className="flex flex-wrap gap-6">
+              <Title className="text-xl">{`→ ${category}`}</Title>
+              <div className="flex flex-wrap gap-2">
                 {items.map(({ Icon, skill }) => (
                   <SkillBox key={skill} Icon={Icon} skill={skill} />
                 ))}
