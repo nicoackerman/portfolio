@@ -1,7 +1,8 @@
 const _experience = [
   {
     label: "Example",
-    description: "This is an example of a description for a job experince card",
+    description:
+      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi adipisci tenetur facere tempore hic doloremque quidem recusandae id in fugit voluptatum, eveniet ea esse quasi voluptatem, voluptate sed laudantium quisquam.",
     timestamp: "Jun 2017 - Dec 2019",
   },
 ];

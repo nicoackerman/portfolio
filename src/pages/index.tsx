@@ -9,6 +9,7 @@ import TECH_STACK from "~/data/techStack";
 import MY_STATS from "~/data/MyStats";
 import MY_PROJECTS from "~/data/myProjects";
 import CustomGlareOver from "~/components/custom/CustomGlareOver";
+import MY_EXPERIENCE from "~/data/myExperience";
 
 export default function Home() {
   console.log(TECH_STACK);
@@ -39,9 +40,9 @@ export default function Home() {
         </section>
 
         {/* About me section */}
-        <section className="flex min-h-screen flex-col gap-4">
+        <section className="flex min-h-screen flex-col gap-7">
           <div>
-            <Title className="text-3xl font-bold">About me</Title>
+            <Title className="my-2 text-3xl font-bold">About me</Title>
             <Text>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
               adipisci tenetur facere tempore hic doloremque quidem recusandae
@@ -59,14 +60,23 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div>
+            {MY_EXPERIENCE.map(({ label, description, timestamp }) => (
+              <div className="flex flex-col gap-5 border-l-4 px-4">
+                <Title className="text-xl font-bold">{label}</Title>
+                <Text>{description}</Text>
+                <Text>{timestamp}</Text>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* My tech stack */}
         <section className="min-h-screen">
-          <Title className="text-3xl font-bold">My tech stack</Title>
+          <Title className="my-2 text-3xl font-bold">My tech stack</Title>
           {TECH_STACK.map(([category, items]) => (
             <div key={category}>
-              <Title className="text-xl">{`→ ${category}`}</Title>
+              <Title className="my-2 text-xl">{`→ ${category}`}</Title>
               <div className="flex flex-wrap gap-2">
                 {items.map(({ Icon, skill }) => (
                   <SkillBox key={skill} Icon={Icon} skill={skill} />
@@ -78,13 +88,13 @@ export default function Home() {
 
         {/* My projects */}
         <section className="flex min-h-screen flex-col gap-4">
-          <Title className="text-3xl font-bold">My projects</Title>
-          <div className="flex flex-col gap-8 lg:flex-row lg:justify-between">
+          <Title className="my-2 text-3xl font-bold">My projects</Title>
+          <div className="flex flex-col gap-8 lg:flex-row lg:justify-between flex-wrap">
             {MY_PROJECTS.map(
               ({ description, name, repoLink, pageLink, stack, img }) => (
                 <CustomGlareOver
                   key={name}
-                  className="flex w-10 flex-col gap-5 p-6"
+                  className="flex flex-col gap-5 p-6"
                 >
                   <div>
                     <img
