@@ -6,7 +6,6 @@ import {
   SiMysql,
   SiNextdotjs,
   SiNodedotjs,
-  SiReact,
   SiShadcnui,
   SiTailwindcss,
   SiTypescript,
