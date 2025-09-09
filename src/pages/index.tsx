@@ -39,7 +39,7 @@ export default function Home() {
         {/* About me section */}
         <section className="my-4 flex flex-col gap-7">
           <div>
-            <h1 className="my-2 text-3xl font-bold">ABOUT ME</h1>
+            <h1 className="my-2 text-3xl font-bold">😀 ABOUT ME</h1>
             <Text>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
               adipisci tenetur facere tempore hic doloremque quidem recusandae
@@ -62,7 +62,7 @@ export default function Home() {
         {/* My experience section */}
         <section className="my-4 flex flex-col gap-7">
           <div>
-            <h1 className="my-2 text-3xl font-bold">MY EXPERIENCE</h1>
+            <h1 className="my-2 text-3xl font-bold">💼 MY EXPERIENCE</h1>
           </div>
           <div>
             {MY_EXPERIENCE.map(
@@ -70,7 +70,7 @@ export default function Home() {
                 <div className="flex flex-col gap-5 border-l-4 px-4">
                   <h1 className="text-xl font-bold">{label}</h1>
                   <Text>{description}</Text>
-                  <div className="flex flex-row justify-between">
+                  <div className="flex flex-col gap-3 md:flex-row md:justify-between">
                     <div className="flex gap-3">
                       {techStack.map((Tech) => (
                         <Tech className="size-7" />
@@ -86,7 +86,7 @@ export default function Home() {
 
         {/* My tech stack */}
         <section className="my-4">
-          <h1 className="my-2 text-3xl font-bold">MY TECH STACK</h1>
+          <h1 className="my-2 text-3xl font-bold">🚀 MY TECH STACK</h1>
           {TECH_STACK.map(([category, items]) => (
             <div key={category}>
               <h1 className="my-2 text-xl">{`→ ${category}`}</h1>
@@ -101,7 +101,7 @@ export default function Home() {
 
         {/* My projects */}
         <section className="my-4 mb-30 flex flex-col gap-4">
-          <h1 className="my-2 text-3xl font-bold">MY PROJECTS</h1>
+          <h1 className="my-2 text-3xl font-bold">🛠️ MY PROJECTS</h1>
           <div className="flex flex-col flex-wrap gap-8 md:gap-x-1 md:gap-y-3 lg:flex-row xl:gap-4">
             {MY_PROJECTS.map(
               ({ description, name, repoLink, pageLink, stack, img }) => (
