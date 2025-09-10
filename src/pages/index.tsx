@@ -10,6 +10,9 @@ import MY_PROJECTS from "~/data/myProjects";
 import CustomGlareOver from "~/components/custom/CustomGlareOver";
 import MY_EXPERIENCE from "~/data/myExperience";
 import CustomSplashCursor from "~/components/custom/CustomSplashCursor";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import MY_REFERENCES from "~/data/myReferences";
+import { BiArrowToRight } from "react-icons/bi";
 
 export default function Home() {
   return (
@@ -21,7 +24,7 @@ export default function Home() {
 
       <main className="flex flex-col gap-y-5 bg-black px-10 text-white md:px-20 lg:px-40 xl:px-100">
         {/* Hero section */}
-        <section className="my-4 flex min-h-screen flex-col items-center justify-center">
+        <section className="my-10 flex min-h-screen flex-col items-center justify-center">
           {/* profile info */}
           <article className="text flex flex-col text-center lg:text-left">
             <Text className="text-3xl font-bold">Hi, I'm Nicolás Andrés!</Text>
@@ -37,15 +40,28 @@ export default function Home() {
         </section>
 
         {/* About me section */}
-        <section className="my-4 flex flex-col gap-7">
+        <section className="my-10 flex flex-col gap-7">
           <div>
-            <h1 className="my-2 text-3xl font-bold">😀 ABOUT ME</h1>
+            <h1 className="my-2 text-3xl font-bold">ABOUT ME</h1>
             <Text>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-              adipisci tenetur facere tempore hic doloremque quidem recusandae
-              id in fugit voluptatum, eveniet ea esse quasi, voluptatem,
-              voluptate sed laudantium quisquam.
+              Hi, there! I'm a fullstack dev from Colombia with over one year of
+              experience in the IT industry, though I've been coding personal
+              projects regularly for over 3 years. My expertise lies in
+              developing apps using React and typescript.
             </Text>
+            <div className="mt-4 flex gap-3">
+              {MY_REFERENCES.map(({ Icon, label, link }) => (
+                <a
+                  key={label}
+                  href={link}
+                  className="group flex gap-2 rounded-lg border border-gray-600 bg-black/40 px-4 py-2 text-sm font-medium text-gray-300 backdrop-blur-sm transition hover:border-gray-400 hover:text-white hover:shadow-[0_0_10px_rgba(255,255,255,0.3)]"
+                >
+                  <Icon className="size-5" />
+                  {label}
+                  <BiArrowToRight className="size-5 transform transition-transform duration-300 group-hover:translate-x-1" />
+                </a>
+              ))}
+            </div>
           </div>
           <div className="flex gap-14">
             {MY_STATS.map(([category, items]) => (
@@ -60,9 +76,9 @@ export default function Home() {
         </section>
 
         {/* My experience section */}
-        <section className="my-4 flex flex-col gap-7">
+        <section className="my-10 flex flex-col gap-7">
           <div>
-            <h1 className="my-2 text-3xl font-bold">💼 MY EXPERIENCE</h1>
+            <h1 className="my-2 text-3xl font-bold">MY EXPERIENCE</h1>
           </div>
           <div>
             {MY_EXPERIENCE.map(
@@ -86,7 +102,7 @@ export default function Home() {
 
         {/* My tech stack */}
         <section className="my-4">
-          <h1 className="my-2 text-3xl font-bold">🚀 MY TECH STACK</h1>
+          <h1 className="my-2 text-3xl font-bold">MY TECH STACK</h1>
           {TECH_STACK.map(([category, items]) => (
             <div key={category}>
               <h1 className="my-2 text-xl">{`→ ${category}`}</h1>
@@ -100,8 +116,8 @@ export default function Home() {
         </section>
 
         {/* My projects */}
-        <section className="my-4 mb-30 flex flex-col gap-4">
-          <h1 className="my-2 text-3xl font-bold">🛠️ MY PROJECTS</h1>
+        <section className="my-10 mb-30 flex flex-col gap-4">
+          <h1 className="my-2 text-3xl font-bold">MY PROJECTS</h1>
           <div className="flex flex-col flex-wrap gap-8 md:gap-x-1 md:gap-y-3 lg:flex-row xl:gap-4">
             {MY_PROJECTS.map(
               ({ description, name, repoLink, pageLink, stack, img }) => (
