@@ -9,6 +9,7 @@ import {
   SiShadcnui,
   SiTailwindcss,
   SiTypescript,
+  SiClerk
 } from "react-icons/si";
 import { BsDatabase, BsTerminalFill } from "react-icons/bs";
 import { FaReact } from "react-icons/fa";
@@ -27,6 +28,7 @@ const _stack = {
     { Icon: SiExpress, skill: "Express" },
     { Icon: SiNodedotjs, skill: "Node" },
     { Icon: BsDatabase, skill: "Convex" },
+    { Icon: SiClerk, skill: "Clerk" },
   ],
   Databases: [{ Icon: SiMysql, skill: "MySQL" }],
   Tools: [

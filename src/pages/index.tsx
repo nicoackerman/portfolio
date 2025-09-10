@@ -1,6 +1,5 @@
 import Head from "next/head";
 import CustomShinyText from "~/components/custom/CustomShinyText";
-import Button from "~/components/ui/Button";
 import Text from "~/components/ui/Text";
 import Link from "~/components/ui/Link";
 import SkillBox from "~/components/ui/SkillBox";
@@ -10,9 +9,9 @@ import MY_PROJECTS from "~/data/myProjects";
 import CustomGlareOver from "~/components/custom/CustomGlareOver";
 import MY_EXPERIENCE from "~/data/myExperience";
 import CustomSplashCursor from "~/components/custom/CustomSplashCursor";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import MY_REFERENCES from "~/data/myReferences";
 import { BiArrowToRight } from "react-icons/bi";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -22,12 +21,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col gap-y-5 bg-black px-10 text-white md:px-20 lg:px-40 xl:px-100">
+      <main className="flex flex-col gap-y-5 bg-black px-10 text-white md:px-20 lg:px-30 xl:px-60 2xl:px-100">
         {/* Hero section */}
         <section className="my-10 flex min-h-screen flex-col items-center justify-center">
           {/* profile info */}
           <article className="text flex flex-col text-center lg:text-left">
-            <Text className="text-3xl font-bold">Hi, I'm Nicolás Andrés!</Text>
+            <Text className="text-3xl font-bold">
+              Hi, I&apos;m Nicolás Andrés!
+            </Text>
             <CustomShinyText
               className="text-5xl font-bold"
               text="FULLSTACK DEVELOPER"
@@ -44,10 +45,10 @@ export default function Home() {
           <div>
             <h1 className="my-2 text-3xl font-bold">ABOUT ME</h1>
             <Text>
-              Hi, there! I'm a fullstack dev from Colombia with over one year of
-              experience in the IT industry, though I've been coding personal
-              projects regularly for over 3 years. My expertise lies in
-              developing apps using React and typescript.
+              Hi, there! I&apos;m a fullstack dev from Colombia with over one
+              year of experience in the IT industry, though I&apos;ve been
+              coding personal projects regularly for over 3 years. My expertise
+              lies in developing apps using React and typescript.
             </Text>
             <div className="mt-4 flex gap-3">
               {MY_REFERENCES.map(({ Icon, label, link }) => (
@@ -83,13 +84,16 @@ export default function Home() {
           <div>
             {MY_EXPERIENCE.map(
               ({ label, description, timestamp, techStack }) => (
-                <div className="flex flex-col gap-5 border-l-4 px-4">
+                <div
+                  key={label}
+                  className="flex flex-col gap-5 border-l-4 px-4"
+                >
                   <h1 className="text-xl font-bold">{label}</h1>
                   <Text>{description}</Text>
                   <div className="flex flex-col gap-3 md:flex-row md:justify-between">
                     <div className="flex gap-3">
-                      {techStack.map((Tech) => (
-                        <Tech className="size-7" />
+                      {techStack.map((TechIcon, i) => (
+                        <TechIcon key={i} className="size-7" />
                       ))}
                     </div>
                     <Text>{timestamp}</Text>
@@ -103,16 +107,18 @@ export default function Home() {
         {/* My tech stack */}
         <section className="my-4">
           <h1 className="my-2 text-3xl font-bold">MY TECH STACK</h1>
-          {TECH_STACK.map(([category, items]) => (
-            <div key={category}>
-              <h1 className="my-2 text-xl">{`→ ${category}`}</h1>
-              <div className="flex flex-wrap gap-2">
-                {items.map(({ Icon, skill }) => (
-                  <SkillBox key={skill} Icon={Icon} skill={skill} />
-                ))}
+          <div className="flex flex-col gap-8 md:gap-6">
+            {TECH_STACK.map(([category, items]) => (
+              <div key={category}>
+                {/* <h1 className="my-2 text-xl">{`→ ${category}`}</h1> */}
+                <div className="flex flex-wrap gap-2">
+                  {items.map(({ Icon, skill }) => (
+                    <SkillBox key={skill} Icon={Icon} skill={skill} />
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </section>
 
         {/* My projects */}
@@ -123,9 +129,10 @@ export default function Home() {
               ({ description, name, repoLink, pageLink, stack, img }) => (
                 <CustomGlareOver key={name} className="flex flex-col gap-5 p-6">
                   <div>
-                    <img
+                    <Image
+                      width={300}
                       src={img}
-                      className="h-60 w-full rounded object-cover object-center"
+                      className="h-50 rounded object-cover object-center"
                       alt="Picture of the project"
                     />
                     <h1 className="my-3 h-10 text-lg font-bold">{name}</h1>
@@ -136,8 +143,8 @@ export default function Home() {
                     <Link href={pageLink}>See</Link>
                   </div>
                   <div className="flex gap-3">
-                    {stack.map((Tech) => (
-                      <Tech className="size-7" />
+                    {stack.map((TechIcon, i) => (
+                      <TechIcon key={i} className="size-7" />
                     ))}
                   </div>
                 </CustomGlareOver>

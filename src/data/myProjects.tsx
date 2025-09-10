@@ -1,4 +1,7 @@
 import { BsDatabase } from "react-icons/bs";
+import whatsappClone from "../../public/images/whatsapp-clone.png";
+import api from "../../public/images/api.png";
+import cosmosLanding from "../../public/images/cosmos-landing.png";
 import {
   SiNextdotjs,
   SiTailwindcss,
@@ -15,7 +18,7 @@ import {
 const MY_PROJECTS = [
   {
     name: "Whatsapp Clone",
-    img: "/images/whatsapp-clone.png",
+    img: whatsappClone,
     repoLink: "https://github.com/nicoackerman/whatsapp-clone",
     pageLink: "https://incomparable-entremet-4adec4.netlify.app/",
     description:
@@ -24,7 +27,7 @@ const MY_PROJECTS = [
   },
   {
     name: "Cosmos Landing Page",
-    img: "/images/cosmos-landing.png",
+    img: cosmosLanding,
     repoLink: "https://github.com/nicoackerman/cosmos-landing-page",
     pageLink: "https://cosmos-landing-page.vercel.app/",
     description:
@@ -33,7 +36,7 @@ const MY_PROJECTS = [
   },
   {
     name: "Mathematical Theorem Generator API",
-    img: "images/api.png",
+    img: api,
     repoLink: "https://github.com/nicoackerman/mathematical-theorem-api-rest",
     pageLink: "https://mathematical-theorem-api-rest.onrender.com/",
     description:
