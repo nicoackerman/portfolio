@@ -9,10 +9,12 @@ import {
   SiShadcnui,
   SiTailwindcss,
   SiTypescript,
-  SiClerk
+  SiClerk,
+  SiZod,
 } from "react-icons/si";
 import { BsDatabase, BsTerminalFill } from "react-icons/bs";
 import { FaReact } from "react-icons/fa";
+import { LuSquareLibrary } from "react-icons/lu";
 
 const _stack = {
   Fronted: [
@@ -23,6 +25,8 @@ const _stack = {
     { Icon: SiTailwindcss, skill: "Tailwind" },
     { Icon: SiAstro, skill: "Astro" },
     { Icon: SiShadcnui, skill: "Shadcn" },
+    { Icon: LuSquareLibrary, skill: "Zustand" },
+    { Icon: SiZod, skill: "Zod" },
   ],
   Backend: [
     { Icon: SiExpress, skill: "Express" },
